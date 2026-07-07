@@ -9,56 +9,47 @@ permalink: "/{{ page.fileSlug }}/"
     <div class="wrap">
       <a class="back-link" href="/#archive">← All episodes</a>
       <div class="grid2">
-        <div>
+        <div class="ep-photo">
           {% if image %}<img src="{{ image }}" alt="{{ title }}">{% endif %}
         </div>
-        <div>
+        <div class="ep-meta">
           <p class="eyebrow">Screen Heat Miami</p>
           <h1>{{ title }}</h1>
           {% if role %}<p class="role">{{ role }}</p>{% endif %}
-
           <div class="listen-links">
             {% if spotify %}<a class="btn" href="{{ spotify }}" target="_blank" rel="noopener">Spotify</a>{% endif %}
             {% if apple %}<a class="btn ghost" href="{{ apple }}" target="_blank" rel="noopener">Apple Podcasts</a>{% endif %}
             {% if soundcloud and "api.soundcloud.com" not in soundcloud %}<a class="btn ghost" href="{{ soundcloud }}" target="_blank" rel="noopener">SoundCloud</a>{% endif %}
             {% if youtube %}<a class="btn ghost" href="{{ youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
-            {% if not spotify and not apple and not soundcloud and not youtube %}
-              <a class="btn" href="{{ site.subscribe.spotify }}" target="_blank" rel="noopener">Listen on Spotify</a>
-              <a class="btn ghost" href="{{ site.subscribe.apple }}" target="_blank" rel="noopener">Apple Podcasts</a>
-            {% endif %}
           </div>
-
-          {% set spEmbed = "" %}
-          {% if spotify and "open.spotify.com" in spotify %}
-            {% set spEmbed = spotify | replace("open.spotify.com/", "open.spotify.com/embed/") %}
-          {% elif site.subscribe.spotify and "open.spotify.com" in site.subscribe.spotify %}
-            {% set spEmbed = site.subscribe.spotify | replace("open.spotify.com/", "open.spotify.com/embed/") %}
-          {% endif %}
-          {% set scUrl = soundcloud or site.subscribe.soundcloud %}
-
-          {% if spEmbed %}
-          <div class="player">
-            <p class="player-label">Listen on Spotify</p>
-            <iframe style="border-radius:12px" src="{{ spEmbed }}" width="100%" height="232" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
-          {% endif %}
-
-          {% if scUrl %}
-          <div class="player">
-            <p class="player-label">Listen on SoundCloud</p>
-            <iframe height="166" width="100%" scrolling="no" frameborder="no" allow="autoplay" loading="lazy" src="https://w.soundcloud.com/player/?url={{ scUrl | urlencode }}&color=%23ff2bd1&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
-          </div>
-          {% endif %}
         </div>
       </div>
     </div>
   </div>
 
-  {% if content %}
-  <div class="article">
+  {% set spEmbed = "" %}
+  {% if spotify and "open.spotify.com" in spotify %}
+    {% set spEmbed = spotify | replace("open.spotify.com/", "open.spotify.com/embed/") %}
+  {% endif %}
+  {% set scUrl = soundcloud or site.subscribe.soundcloud %}
+
+  <div class="ep-body">
     <div class="wrap">
-      {{ content | safe }}
+      <div class="prose">
+        {% if spEmbed %}
+        <div class="player">
+          <p class="player-label">Listen on Spotify</p>
+          <iframe style="border-radius:12px" src="{{ spEmbed }}" width="100%" height="232" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        {% endif %}
+        {% if scUrl %}
+        <div class="player">
+          <p class="player-label">Listen on SoundCloud</p>
+          <iframe height="166" width="100%" scrolling="no" frameborder="no" allow="autoplay" loading="lazy" src="https://w.soundcloud.com/player/?url={{ scUrl | urlencode }}&color=%23ff2bd1&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+        </div>
+        {% endif %}
+        {% if content %}<div class="article-content">{{ content | safe }}</div>{% endif %}
+      </div>
     </div>
   </div>
-  {% endif %}
 </article>
