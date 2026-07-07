@@ -5,7 +5,7 @@ order: 72
 image: "https://static.wixstatic.com/media/598420_fa3d2f833dd54d6789dfc62647f64720~mv2.jpg/v1/crop/x_27,y_0,w_989,h_721/fill/w_612,h_446,al_c,q_80,enc_auto/bechir.jpg"
 spotify: ""
 apple: ""
-soundcloud: ""
+soundcloud: "https://api.soundcloud.com/tracks/2263249457"
 youtube: ""
 layout: episode.njk
 ---

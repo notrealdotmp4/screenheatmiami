@@ -113,7 +113,8 @@ section { padding: 64px 0; }
 .episode-hero img { border-radius: 16px; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 .episode-hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.8rem, 6vw, 4.4rem); line-height: 1.05; }
 .episode-hero .role { color: var(--accent-2); font-weight: 600; font-size: 1.05rem; }
-.player { margin: 28px 0; }
+.player { margin: 22px 0; }
+.player-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin: 0 0 8px; }
 .player iframe { width: 100%; border: 0; border-radius: 12px; }
 .listen-links { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
 .article { padding: 40px 0 72px; }

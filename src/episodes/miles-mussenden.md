@@ -5,7 +5,7 @@ order: 73
 image: "https://static.wixstatic.com/media/095606_4e4b323a9f234e12929ae76e9a08e3c9~mv2_d_3400_2400_s_4_2.jpg/v1/crop/x_649,y_31,w_2059,h_2338/fill/w_660,h_750,al_c,q_85,enc_auto/Screen%20Heat%20Miami%20V3.jpg"
 spotify: ""
 apple: ""
-soundcloud: ""
+soundcloud: "https://api.soundcloud.com/tracks/2340217397"
 youtube: ""
 layout: episode.njk
 ---
