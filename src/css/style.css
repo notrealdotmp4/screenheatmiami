@@ -8,6 +8,7 @@
   --accent-2: #25e0e6;
   --line: #2a2a33;
   --max: 1160px;
+  --display: "Great Vibes", "Segoe Script", cursive;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -36,10 +37,7 @@ ul.plain a:hover { color: var(--accent-2); }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; gap: 24px; height: 66px; }
-.brand {
-  font-family: "Anton", sans-serif; font-size: 1.5rem; letter-spacing: .5px;
-  text-transform: uppercase;
-}
+.brand { display: inline-flex; align-items: center; }
 .brand span { color: var(--accent-2); }
 .main-nav { display: flex; gap: 22px; margin-left: auto; font-weight: 500; }
 .main-nav a { color: var(--muted); }
@@ -59,7 +57,7 @@ ul.plain a:hover { color: var(--accent-2); }
 }
 .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; }
 .eyebrow { color: var(--accent-2); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; }
-.hero h1 { font-family: "Anton", sans-serif; font-size: clamp(2.6rem, 6vw, 4.6rem); text-transform: uppercase; letter-spacing: 1px; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(3.6rem, 9vw, 6.4rem); line-height: 1; margin-bottom: .2em; }
 .hero p { color: var(--muted); font-size: 1.1rem; max-width: 46ch; }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
 .btn {
@@ -79,7 +77,7 @@ ul.plain a:hover { color: var(--accent-2); }
 /* Sections */
 section { padding: 64px 0; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; gap: 16px; flex-wrap: wrap; }
-.section-head h2 { font-family: "Anton", sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.section-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1.05; }
 .section-head .accent-bar { color: var(--accent); }
 
 /* Episode grid */
@@ -113,7 +111,7 @@ section { padding: 64px 0; }
 .episode-hero { padding: 56px 0 24px; border-bottom: 1px solid var(--line); background: var(--bg-2); }
 .episode-hero .grid2 { display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: start; }
 .episode-hero img { border-radius: 16px; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-.episode-hero h1 { font-family: "Anton", sans-serif; text-transform: uppercase; font-size: clamp(2rem, 5vw, 3.2rem); }
+.episode-hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.8rem, 6vw, 4.4rem); line-height: 1.05; }
 .episode-hero .role { color: var(--accent-2); font-weight: 600; font-size: 1.05rem; }
 .player { margin: 28px 0; }
 .player iframe { width: 100%; border: 0; border-radius: 12px; }
