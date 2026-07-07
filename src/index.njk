@@ -1,0 +1,106 @@
+---
+layout: base.njk
+permalink: /
+---
+{% set featured = collections.episodes[0] %}
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Miami Film · TV · Entertainment</p>
+      <h1>Screen Heat Miami</h1>
+      <p>{{ site.description }}</p>
+      <div class="hero-cta">
+        <a class="btn" href="{{ site.subscribe.spotify }}" target="_blank" rel="noopener">Listen on Spotify</a>
+        <a class="btn ghost" href="{{ site.subscribe.apple }}" target="_blank" rel="noopener">Apple Podcasts</a>
+      </div>
+    </div>
+    {% if featured %}
+    <a class="hero-card" href="{{ featured.url }}">
+      {% if featured.data.image %}<img src="{{ featured.data.image }}" alt="{{ featured.data.title }}">{% endif %}
+      <div class="body">
+        <p class="eyebrow">Latest Episode</p>
+        <h3>{{ featured.data.title }}</h3>
+        <p class="muted">{{ featured.data.role }}</p>
+      </div>
+    </a>
+    {% endif %}
+  </div>
+</section>
+
+<section id="latest">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Latest <span class="accent-bar">Episodes</span></h2>
+      <a class="btn ghost" href="#archive">Full archive</a>
+    </div>
+    <div class="grid">
+      {% for ep in collections.episodes %}{% if loop.index <= 6 %}
+      <a class="ep-card" href="{{ ep.url }}">
+        {% if ep.data.image %}<img class="thumb" src="{{ ep.data.image }}" alt="{{ ep.data.title }}" loading="lazy">{% endif %}
+        <div class="body">
+          <h3>{{ ep.data.title }}</h3>
+          <p class="role">{{ ep.data.role }}</p>
+          <span class="listen">Listen now</span>
+        </div>
+      </a>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head"><h2>Our <span class="accent-bar">Show</span></h2></div>
+    <p class="muted" style="max-width:70ch;font-size:1.1rem;">{{ site.description }} Below is our latest addition to the Screen Heat family — <strong>SHM Industry Heat</strong>, our in-between-the-interview catch up on what's the what in the biz. Fiya!</p>
+  </div>
+</section>
+
+<section id="hosts">
+  <div class="wrap">
+    <div class="section-head"><h2>Our <span class="accent-bar">Hosts</span></h2></div>
+    <div class="hosts-grid">
+      {% for h in site.hosts %}
+      <div class="host">
+        <img src="{{ h.image }}" alt="{{ h.name }}" loading="lazy">
+        <div class="name">{{ h.name }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="team-list">
+      {% for member in site.team %}<div>{{ member }}</div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="archive" style="background:var(--bg-2);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Full <span class="accent-bar">Archive</span></h2>
+      <input id="archive-search" type="search" placeholder="Search guests…" style="padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);min-width:220px;">
+    </div>
+    <div class="grid">
+      {% for ep in collections.episodes %}
+      <a class="ep-card" href="{{ ep.url }}" data-search="{{ (ep.data.title + ' ' + ep.data.role) | lower }}">
+        {% if ep.data.image %}<img class="thumb" src="{{ ep.data.image }}" alt="{{ ep.data.title }}" loading="lazy">{% endif %}
+        <div class="body">
+          <h3>{{ ep.data.title }}</h3>
+          <p class="role">{{ ep.data.role }}</p>
+          <span class="listen">Listen now</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="sponsors">
+  <div class="wrap">
+    <div class="section-head"><h2>Our <span class="accent-bar">Sponsors</span></h2></div>
+    <div class="sponsors">
+      {% for s in site.sponsors %}
+      <a href="{{ s.url }}" target="_blank" rel="noopener" title="{{ s.name }}"><img src="{{ s.image }}" alt="{{ s.name }}" loading="lazy"></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

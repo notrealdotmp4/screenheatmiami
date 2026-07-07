@@ -1,0 +1,48 @@
+---
+layout: base.njk
+permalink: "/{{ page.fileSlug }}/"
+---
+{% set description = title + " — " + role + " on Screen Heat Miami." %}
+{% set ogImage = image %}
+<article>
+  <div class="episode-hero">
+    <div class="wrap">
+      <a class="back-link" href="/#archive">← All episodes</a>
+      <div class="grid2">
+        <div>
+          {% if image %}<img src="{{ image }}" alt="{{ title }}">{% endif %}
+        </div>
+        <div>
+          <p class="eyebrow">Screen Heat Miami</p>
+          <h1>{{ title }}</h1>
+          {% if role %}<p class="role">{{ role }}</p>{% endif %}
+
+          <div class="listen-links">
+            {% if spotify %}<a class="btn" href="{{ spotify }}" target="_blank" rel="noopener">Spotify</a>{% endif %}
+            {% if apple %}<a class="btn ghost" href="{{ apple }}" target="_blank" rel="noopener">Apple Podcasts</a>{% endif %}
+            {% if soundcloud %}<a class="btn ghost" href="{{ soundcloud }}" target="_blank" rel="noopener">SoundCloud</a>{% endif %}
+            {% if youtube %}<a class="btn ghost" href="{{ youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+            {% if not spotify and not apple and not soundcloud and not youtube %}
+              <a class="btn" href="{{ site.subscribe.spotify }}" target="_blank" rel="noopener">Listen on Spotify</a>
+              <a class="btn ghost" href="{{ site.subscribe.apple }}" target="_blank" rel="noopener">Apple Podcasts</a>
+            {% endif %}
+          </div>
+
+          {% if spotify and "/episode/" in spotify %}
+          <div class="player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed{{ spotify | replace('https://open.spotify.com','') }}" height="232" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if content %}
+  <div class="article">
+    <div class="wrap">
+      {{ content | safe }}
+    </div>
+  </div>
+  {% endif %}
+</article>

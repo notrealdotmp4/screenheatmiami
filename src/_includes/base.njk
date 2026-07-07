@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.name }}{% endif %}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+  {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Screen Heat <span>Miami</span></a>
+      <nav class="main-nav">
+        <a href="/#latest">Latest</a>
+        <a href="/#archive">Archive</a>
+        <a href="/#hosts">Hosts</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="subscribe-mini">
+        <a href="{{ site.subscribe.apple }}" target="_blank" rel="noopener">Apple</a>
+        <a href="{{ site.subscribe.spotify }}" target="_blank" rel="noopener">Spotify</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="brand footer-brand">Screen Heat <span>Miami</span></div>
+        <p>{{ site.tagline }}</p>
+        <p class="muted">{{ site.location }} · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <div>
+        <h4>Listen</h4>
+        <ul class="plain">
+          <li><a href="{{ site.subscribe.apple }}" target="_blank" rel="noopener">Apple Podcasts</a></li>
+          <li><a href="{{ site.subscribe.spotify }}" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="{{ site.subscribe.soundcloud }}" target="_blank" rel="noopener">SoundCloud</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul class="plain">
+          <li><a href="{{ site.social.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="{{ site.social.facebook }}" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="{{ site.social.twitter }}" target="_blank" rel="noopener">Twitter / X</a></li>
+          <li><a href="{{ site.social.youtube }}" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap copyright">© {{ "" | year }} {{ site.name }}. All rights reserved.</div>
+  </footer>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

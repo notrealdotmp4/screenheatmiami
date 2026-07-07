@@ -1,0 +1,13 @@
+{
+  "name": "screen-heat-miami",
+  "version": "1.0.0",
+  "description": "Screen Heat Miami podcast website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

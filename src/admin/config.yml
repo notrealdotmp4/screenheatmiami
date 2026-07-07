@@ -1,0 +1,96 @@
+# ============================================================================
+# Screen Heat Miami — Decap CMS configuration
+# Login is handled by DecapBridge (https://decapbridge.com) — free, lets
+# non-technical editors log in by email without a GitHub account.
+#
+# >>> BEFORE THIS WORKS, replace the three placeholders below with the values
+#     DecapBridge shows you after you create a Site there. See DEPLOY-GUIDE.md,
+#     "Part 4: Turn on the editor login". <<<
+# ============================================================================
+backend:
+  name: git-gateway
+  repo: YOUR-GITHUB-USERNAME/screenheatmiami          # << replace (e.g. gbianchi/screenheatmiami)
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/YOUR-SITE-ID   # << replace (DecapBridge gives you this)
+  gateway_url: https://gateway.decapbridge.com
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}" - {{author-name}} via DecapBridge'
+    update: 'Update {{collection}} "{{slug}}" - {{author-name}} via DecapBridge'
+    delete: 'Delete {{collection}} "{{slug}}" - {{author-name}} via DecapBridge'
+    uploadMedia: 'Upload "{{path}}" - {{author-name}} via DecapBridge'
+    deleteMedia: 'Delete "{{path}}" - {{author-name}} via DecapBridge'
+
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+site_url: https://screenheatmiami.com
+display_url: https://screenheatmiami.com
+
+# Where uploaded images are stored in the repo, and the public path they serve from
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "episodes"
+    label: "Podcast Episodes"
+    label_singular: "Episode"
+    folder: "src/episodes"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{title}} — {{role}}"
+    sortable_fields: [order, title]
+    fields:
+      - { label: "Guest / Episode Title", name: "title", widget: "string", hint: "e.g. Miles Mussenden, or Bitcoin Bonanza — Part One" }
+      - { label: "Role / Subtitle", name: "role", widget: "string", required: false, hint: "e.g. Actor/Director/Producer" }
+      - { label: "Sort order (higher shows first)", name: "order", widget: "number", value_type: "int", hint: "Give each NEW episode a number higher than the current top episode so it appears first." }
+      - { label: "Cover Image", name: "image", widget: "image", required: false, hint: "Guest headshot or episode art. Landscape works best." }
+      - { label: "Spotify link", name: "spotify", widget: "string", required: false, hint: "Paste the Spotify episode URL. If it is an /episode/ link, a player embeds automatically." }
+      - { label: "Apple Podcasts link", name: "apple", widget: "string", required: false }
+      - { label: "SoundCloud link", name: "soundcloud", widget: "string", required: false }
+      - { label: "YouTube link", name: "youtube", widget: "string", required: false }
+      - { label: "Layout (do not change)", name: "layout", widget: "hidden", default: "episode.njk" }
+      - { label: "Description / Bio", name: "body", widget: "markdown", required: false, hint: "Guest bio or episode notes." }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "site"
+        label: "General & Subscribe Links"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site Name", name: "name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - label: "Subscribe Links"
+            name: "subscribe"
+            widget: "object"
+            fields:
+              - { label: "Apple", name: "apple", widget: "string" }
+              - { label: "Spotify", name: "spotify", widget: "string" }
+              - { label: "Google", name: "google", widget: "string", required: false }
+              - { label: "SoundCloud", name: "soundcloud", widget: "string", required: false }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Twitter", name: "twitter", widget: "string", required: false }
+              - { label: "YouTube", name: "youtube", widget: "string", required: false }
+          - label: "Hosts"
+            name: "hosts"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+          - { label: "Team", name: "team", widget: "list", field: { label: "Member", name: "member", widget: "string" } }
+          - label: "Sponsors"
+            name: "sponsors"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Logo", name: "image", widget: "image" }
