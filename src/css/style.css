@@ -58,7 +58,7 @@ ul.plain a:hover { color: var(--accent-2); }
 .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; align-items: center; }
 .eyebrow { color: var(--accent-2); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; }
 .hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(3.6rem, 9vw, 6.4rem); line-height: 1; margin-bottom: .2em; }
-.hero-logo { width: min(520px, 92%); height: auto; margin: .1em 0 .4em; display: block; }
+.hero-logo { width: min(520px, 92%); height: auto; aspect-ratio: 660 / 267; object-fit: contain; margin: .1em 0 .4em; display: block; }
 .hero p { color: var(--muted); font-size: 1.1rem; max-width: 46ch; }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
 .btn {
@@ -141,8 +141,8 @@ section { padding: 64px 0; }
 }
 
 /* Logo image */
-.brand-logo { height: 46px; width: auto; display: block; }
-.footer-logo { height: 58px; width: auto; margin-bottom: 14px; }
+.brand-logo { height: 46px; width: auto; aspect-ratio: 660 / 215.2; display: block; }
+.footer-logo { height: 58px; width: auto; aspect-ratio: 660 / 215.2; margin-bottom: 14px; }
 @media (max-width: 860px){ .brand-logo { height: 40px; } }
 
 /* ---- Episode modal (frosted glass + glowing pink outline) ---- */
