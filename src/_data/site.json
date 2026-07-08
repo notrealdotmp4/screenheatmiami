@@ -1,13 +1,12 @@
 {
   "name": "Screen Heat Miami",
   "tagline": "The pulse of Miami film, TV & entertainment.",
-  "description": "Screen Heat Miami (SHM) is hosted by veteran Miami-based producers Kevin Sharpley and JL Martinez, covering the latest trends in the film, TV, and entertainment industry — including interviews with global and local industry leaders, all told from a Miami point of view.",
+  "description": "Screen Heat Miami (SHM) is hosted by veteran Miami-based producers Kevin Sharpley and JL Martinez, covering the latest trends in the film, TV, and entertainment industry \u2014 including interviews with global and local industry leaders, all told from a Miami point of view.",
   "email": "screenheatmiami@gmail.com",
   "location": "Miami, FL",
   "subscribe": {
     "apple": "https://podcasts.apple.com/us/podcast/screenheatmiami/id1481896357",
     "spotify": "https://open.spotify.com/show/3tRPXZCKatREaYqOLD1cvN",
-    "google": "https://playmusic.app.goo.gl/?link=https://play.google.com/music/m/I7c4mbbhws5wlrp43j56bllclvy",
     "soundcloud": "https://soundcloud.com/screenheatmiami"
   },
   "social": {
@@ -17,20 +16,42 @@
     "youtube": "https://www.youtube.com/@screenheatmiami"
   },
   "hosts": [
-    { "name": "Kevin Sharpley", "image": "https://static.wixstatic.com/media/598420_582229e1577a40bbb2859a673b661ac4~mv2.jpg/v1/crop/x_0,y_5,w_401,h_594/fill/w_318,h_466,al_c,q_80,enc_auto/kevin%20sharpley%20headshot.jpg" },
-    { "name": "Jose Luis Martinez", "image": "https://static.wixstatic.com/media/598420_9a6d7cecf40948d59ffc183cb3babd15~mv2_d_2320_2320_s_2.jpg/v1/crop/x_218,y_0,w_1894,h_2310/fill/w_382,h_466,al_c,q_80,enc_auto/IMG_2945_JPG.jpg" }
+    {
+      "name": "Kevin Sharpley",
+      "image": "https://static.wixstatic.com/media/598420_582229e1577a40bbb2859a673b661ac4~mv2.jpg/v1/crop/x_0,y_5,w_401,h_594/fill/w_318,h_466,al_c,q_80,enc_auto/kevin%20sharpley%20headshot.jpg"
+    },
+    {
+      "name": "Jose Luis Martinez",
+      "image": "https://static.wixstatic.com/media/598420_9a6d7cecf40948d59ffc183cb3babd15~mv2_d_2320_2320_s_2.jpg/v1/crop/x_218,y_0,w_1894,h_2310/fill/w_382,h_466,al_c,q_80,enc_auto/IMG_2945_JPG.jpg"
+    }
   ],
   "team": [
-    "Media Director — Gianfranco Bianchi",
-    "Music and Sound — Justin Trieger",
-    "Podcast Assistant — Joffre Valles",
-    "Podcast Assistant / Special Guest — Andre Alonso",
-    "Podcast Assistant — Carlos Zavala"
+    "Media Director \u2014 Gianfranco Bianchi",
+    "Music and Sound \u2014 Justin Trieger",
+    "Podcast Assistant \u2014 Joffre Valles",
+    "Podcast Assistant / Special Guest \u2014 Andre Alonso",
+    "Podcast Assistant \u2014 Carlos Zavala"
   ],
   "sponsors": [
-    { "name": "Miami Media Film Market", "url": "https://www.miamimediafilmmarket.org/", "image": "https://static.wixstatic.com/media/095606_a74b5a62e9f341219773c227f460bd54~mv2.png" },
-    { "name": "Camacol", "url": "http://www.camacol.org/", "image": "https://static.wixstatic.com/media/095606_6a9272b77b524d6283b990791b361db8~mv2.png" },
-    { "name": "Cinevisun", "url": "http://www.cinevisun.com", "image": "https://static.wixstatic.com/media/095606_b1795bc809d54cfc9118098981456bdf~mv2.jpg" },
-    { "name": "Kijik Multimedia", "url": "http://www.kijikmultimedia.com", "image": "https://static.wixstatic.com/media/095606_89f40c8c1e19421595d63ed81e91792e~mv2.jpg" }
+    {
+      "name": "Miami Media Film Market",
+      "url": "https://www.miamimediafilmmarket.org/",
+      "image": "https://static.wixstatic.com/media/095606_a74b5a62e9f341219773c227f460bd54~mv2.png"
+    },
+    {
+      "name": "Camacol",
+      "url": "http://www.camacol.org/",
+      "image": "https://static.wixstatic.com/media/095606_6a9272b77b524d6283b990791b361db8~mv2.png"
+    },
+    {
+      "name": "Cinevisun",
+      "url": "http://www.cinevisun.com",
+      "image": "https://static.wixstatic.com/media/095606_b1795bc809d54cfc9118098981456bdf~mv2.jpg"
+    },
+    {
+      "name": "Kijik Multimedia",
+      "url": "http://www.kijikmultimedia.com",
+      "image": "https://static.wixstatic.com/media/095606_89f40c8c1e19421595d63ed81e91792e~mv2.jpg"
+    }
   ]
 }

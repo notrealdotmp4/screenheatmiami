@@ -78,7 +78,6 @@ collections:
             fields:
               - { label: "Apple", name: "apple", widget: "string" }
               - { label: "Spotify", name: "spotify", widget: "string" }
-              - { label: "Google", name: "google", widget: "string", required: false }
               - { label: "SoundCloud", name: "soundcloud", widget: "string", required: false }
           - label: "Social Links"
             name: "social"

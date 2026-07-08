@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ---- Share button (Web Share API w/ clipboard fallback) ----
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-share]");
+    if (!btn) return;
+    e.preventDefault();
+    const url = window.location.href;
+    const title = btn.dataset.shareTitle || document.title;
+    if (navigator.share) {
+      navigator.share({ title: title + " — Screen Heat Miami", url }).catch(() => {});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        const original = btn.textContent;
+        btn.textContent = "Link copied!";
+        setTimeout(() => { btn.textContent = original; }, 1800);
+      });
+    }
+  });
+
   // ---- Archive search ----
   const input = document.getElementById("archive-search");
   if (input) {

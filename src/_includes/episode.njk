@@ -21,6 +21,7 @@ permalink: "/{{ page.fileSlug }}/"
             {% if apple %}<a class="btn ghost" href="{{ apple }}" target="_blank" rel="noopener">Apple Podcasts</a>{% endif %}
             {% if soundcloud and "api.soundcloud.com" not in soundcloud %}<a class="btn ghost" href="{{ soundcloud }}" target="_blank" rel="noopener">SoundCloud</a>{% endif %}
             {% if youtube %}<a class="btn ghost" href="{{ youtube }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+            <button type="button" class="btn ghost share-btn" data-share data-share-title="{{ title }}">Share ↗</button>
           </div>
         </div>
       </div>
